@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Joshua Granick",
+      "authorEmail": "jgranick@users.noreply.github.com",
+      "authorUrl": ""
+    }
+  }
+}
