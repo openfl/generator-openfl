@@ -1,3 +1,4 @@
+var Sprite = require ("openfl/display/Sprite").default;
 var Stage = require ("openfl/display/Stage").default;
 
 
