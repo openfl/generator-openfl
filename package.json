@@ -1,14 +1,11 @@
 {
   "name": "generator-openfl",
-  "version": "1.0.3",
-  "description": "Generator for OpenFL ES5, ES6, TypeScript or Haxe NPM-based projects",
+  "version": "1.0.4",
+  "description":
+    "Generator for OpenFL ES5, ES6, TypeScript or Haxe NPM-based projects",
   "homepage": "http://www.openfl.org",
-  "contributors": [
-    "Joshua Granick"
-  ],
-  "files": [
-    "generators"
-  ],
+  "contributors": ["Joshua Granick"],
+  "files": ["generators"],
   "main": "generators/index.js",
   "keywords": [
     "openfl",
@@ -49,20 +46,11 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
   },
   "eslintConfig": {
-    "extends": [
-      "xo",
-      "prettier"
-    ],
+    "extends": ["xo", "prettier"],
     "env": {
       "jest": true,
       "node": true
@@ -76,9 +64,7 @@
         }
       ]
     },
-    "plugins": [
-      "prettier"
-    ]
+    "plugins": ["prettier"]
   },
   "repository": "openfl/generator-openfl",
   "license": "MIT"
