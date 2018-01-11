@@ -21,10 +21,6 @@ module.exports = {
 			{
 				test: /\.tsx?$/,
 				loader: 'ts-loader'
-			},
-			{
-				test: /\.swf$/,
-				loader: 'swf-loader'
 			}
 		]
 	}
