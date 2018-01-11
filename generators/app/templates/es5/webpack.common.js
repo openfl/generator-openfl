@@ -10,5 +10,13 @@ module.exports = {
 		alias: {
 			"openfl": path.resolve (__dirname, "node_modules/openfl/lib/openfl")
 		}
+	},
+	module: {
+		rules: [
+			{
+				test: /\.swf$/,
+				loader: 'swf-loader'
+			}
+		]
 	}
 };
