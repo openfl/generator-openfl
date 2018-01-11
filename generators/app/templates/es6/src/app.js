@@ -1,4 +1,4 @@
-import Sprite from "openfl/display/Stage";
+import Sprite from "openfl/display/Sprite";
 import Stage from "openfl/display/Stage";
 
 
