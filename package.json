@@ -1,6 +1,6 @@
 {
   "name": "generator-openfl",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description":
     "Generator for OpenFL ES5, ES6, TypeScript or Haxe NPM-based projects",
   "homepage": "http://www.openfl.org",
