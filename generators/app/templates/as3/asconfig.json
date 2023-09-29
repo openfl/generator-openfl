@@ -19,5 +19,5 @@
       "-js-getter-prefix=get_",
       "-js-setter-prefix=set_"
   ],
-  "mainClass": "Main"
+  "mainClass": "App"
 }
