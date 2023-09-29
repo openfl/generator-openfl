@@ -27,7 +27,7 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^3.1.1"
+    "yeoman-generator": "^5.9.0"
   },
   "repository": "openfl/generator-openfl",
   "license": "MIT"
