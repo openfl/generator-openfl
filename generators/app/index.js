@@ -63,21 +63,10 @@ module.exports = class extends Generator {
 					this.destinationRoot (),
 					templateContext
 				)
-				this.fs.copyTpl (
-					this.templatePath ("es5/.*"),
-					this.destinationRoot (),
-					templateContext
-				)
-				break;
 			
 			case "ES6/JavaScript":
 				this.fs.copyTpl (
 					this.templatePath ("es6/**/*"),
-					this.destinationRoot (),
-					templateContext
-				)
-				this.fs.copyTpl (
-					this.templatePath ("es6/.*"),
 					this.destinationRoot (),
 					templateContext
 				)
@@ -89,21 +78,11 @@ module.exports = class extends Generator {
 					this.destinationRoot (),
 					templateContext
 				)
-				this.fs.copyTpl (
-					this.templatePath ("as3/.*"),
-					this.destinationRoot (),
-					templateContext
-				)
 				break;
 			
 			case "Haxe":
 				this.fs.copyTpl (
 					this.templatePath ("haxe/**/*"),
-					this.destinationRoot (),
-					templateContext
-				)
-				this.fs.copyTpl (
-					this.templatePath ("haxe/.*"),
 					this.destinationRoot (),
 					templateContext
 				)
@@ -115,11 +94,6 @@ module.exports = class extends Generator {
 					this.destinationRoot (),
 					templateContext
 				)
-				this.fs.copyTpl (
-					this.templatePath ("typescript/.*"),
-					this.destinationRoot (),
-					templateContext
-				)
 				break;
 			
 		}
@@ -128,8 +102,12 @@ module.exports = class extends Generator {
 	
 	install () {
 		
-		//this.installDependencies ();
-		this.npmInstall ();
+
+
+		const packageJson = {}
+		this.fs.extendJSON(this.destinationPath('package.json'), packageJson)
+		this.spawnCommand('npm', 'install')
+		
 		
 	}
 	
