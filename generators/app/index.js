@@ -102,13 +102,9 @@ module.exports = class extends Generator {
 	
 	install () {
 		
-
-
 		const packageJson = {}
 		this.fs.extendJSON(this.destinationPath('package.json'), packageJson)
 		this.spawnCommand('npm', 'install')
-		
-		
 	}
 	
 };
