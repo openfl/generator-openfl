@@ -1,7 +1,5 @@
 'use strict';
-const Generator = require ("yeoman-generator");
-const chalk = require ("chalk");
-const yosay = require ("yosay");
+const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
 	
@@ -37,7 +35,7 @@ module.exports = class extends Generator {
 			type: "list",
 			name: "language",
 			message: "Source language",
-			choices: [ "TypeScript", "Haxe", "ES6/JavaScript", "ES5/JavaScript" ],
+			choices: [ "TypeScript", "Haxe", "ES6/JavaScript", "ES5/JavaScript", "AS3/Royale" ],
 			default: "TypeScript"
 		}];
 		
@@ -80,6 +78,19 @@ module.exports = class extends Generator {
 				)
 				this.fs.copyTpl (
 					this.templatePath ("es6/.*"),
+					this.destinationRoot (),
+					templateContext
+				)
+				break;
+				
+				case "AS3/Royale":
+				this.fs.copyTpl (
+					this.templatePath ("as3/**/*"),
+					this.destinationRoot (),
+					templateContext
+				)
+				this.fs.copyTpl (
+					this.templatePath ("as3/.*"),
 					this.destinationRoot (),
 					templateContext
 				)

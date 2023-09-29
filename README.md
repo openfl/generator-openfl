@@ -1,5 +1,5 @@
-# generator-openfl [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Generator for OpenFL ES5, ES6, TypeScript or Haxe NPM-based projects
+# generator-openfl [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+> Generator for OpenFL ES5, ES6, TypeScript, Haxe or AS3 NPM-based projects&#34;
 
 ## Installation
 
@@ -25,12 +25,10 @@ yo openfl
 
 ## License
 
-MIT © [Joshua Granick]()
+ MIT © [Joshua Granick]()
 
 
 [npm-image]: https://badge.fury.io/js/generator-openfl.svg
 [npm-url]: https://npmjs.org/package/generator-openfl
-[travis-image]: https://travis-ci.org/openfl/generator-openfl.svg?branch=master
-[travis-url]: https://travis-ci.org/openfl/generator-openfl
 [daviddm-image]: https://david-dm.org/openfl/generator-openfl.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/openfl/generator-openfl
