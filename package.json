@@ -38,7 +38,6 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "generator-openfl": "file:generator-openfl-2.0.0.tgz",
     "yeoman-generator": "^3.2.0"
   },
   "jest": {
