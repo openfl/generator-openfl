@@ -1,2 +1,3 @@
 node_modules/
 generators/**/package-lock.json
+generator-openfl-*.tgz
