@@ -3,7 +3,7 @@ const Generator = require ("yeoman-generator");
 
 module.exports = class extends Generator {
 
-	prompting() {
+	prompting () {
 
 		this.log ("\x1b[37m .d88 88b.                             \x1b[0m\x1b[1;36m888888b 888 \x1b[0m");
 		this.log ("\x1b[37md88P\" \"Y88b                            \x1b[0m\x1b[1;36m888     888 \x1b[0m");
@@ -47,7 +47,7 @@ module.exports = class extends Generator {
 
 	}
 
-	writing() {
+	writing () {
 
 		const templateContext = {
 			name: this.props.name,
@@ -143,7 +143,7 @@ module.exports = class extends Generator {
 
 	}
 
-	install() {
+	install () {
 
 		this.npmInstall ();
 
