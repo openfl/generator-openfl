@@ -1,0 +1,35 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    - name: Install Dependencies
+      run: |
+        npm ci
+
+    - name: Run Tests
+      run: |
+        npm test
+
+    - name: Package Library for npm
+      run: |
+        npm pack
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: generator-openfl-npm
+        path: generator-openfl-*.tgz
+        if-no-files-found: error

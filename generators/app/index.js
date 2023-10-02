@@ -1,12 +1,10 @@
-'use strict';
+"use strict";
 const Generator = require ("yeoman-generator");
-const chalk = require ("chalk");
-const yosay = require ("yosay");
 
 module.exports = class extends Generator {
-	
-	prompting () {
-		
+
+	prompting() {
+
 		this.log ("\x1b[37m .d88 88b.                             \x1b[0m\x1b[1;36m888888b 888 \x1b[0m");
 		this.log ("\x1b[37md88P\" \"Y88b                            \x1b[0m\x1b[1;36m888     888 \x1b[0m");
 		this.log ("\x1b[37m888     888                            \x1b[0m\x1b[1;36m888     888 \x1b[0m");
@@ -17,16 +15,9 @@ module.exports = class extends Generator {
 		this.log ("\x1b[37m \"Y88 88P\"  88888P\"   \"Y8888  888  888 \x1b[0m\x1b[1;36m888     \"Y888P \x1b[0m");
 		this.log ("\x1b[37m            888                                   ");
 		this.log ("\x1b[37m            888                                   \x1b[0m");
-		
+
 		this.log ("");
-		// LogHelper.println ("\x1b[1mOpenFL Command-Line Tools\x1b[0;1m (" + getToolsVersion () + ")\x1b[0m");
-			
-		
-		
-		// this.log (
-		//   chalk.cyan('OpenFL') + ' NPM project generator'
-		// );
-		
+
 		const prompts = [{
 			type: "input",
 			name: "name",
@@ -37,89 +28,125 @@ module.exports = class extends Generator {
 			type: "list",
 			name: "language",
 			message: "Source language",
-			choices: [ "TypeScript", "Haxe", "ES6/JavaScript", "ES5/JavaScript" ],
+			choices: [
+				"TypeScript",
+				"Haxe",
+				"ES6/JavaScript",
+				"ES5/JavaScript",
+				"AS3/Royale"
+			],
 			default: "TypeScript"
 		}];
-		
+
 		return this.prompt (prompts).then (props => {
-			
+
 			this.props = props;
 			this.packageName = this.props.name.replace (" ", "").toLowerCase ();
-			
+
 		});
-		
+
 	}
 
-	writing () {
-		
-		var templateContext = {
+	writing() {
+
+		const templateContext = {
 			name: this.props.name,
 			packageName: this.packageName
-		}
-		
+		};
+
 		switch (this.props.language) {
-			
+
 			case "ES5/JavaScript":
 				this.fs.copyTpl (
 					this.templatePath ("es5/**/*"),
 					this.destinationRoot (),
-					templateContext
-				)
-				this.fs.copyTpl (
-					this.templatePath ("es5/.*"),
-					this.destinationRoot (),
-					templateContext
-				)
+					templateContext,
+					undefined,
+					{
+						globOptions: {
+							dot: true,
+							ignore: ["**/dot_gitignore"]
+						}
+					}
+				);
+				this.fs.copy (this.templatePath ("es5/dot_gitignore"), this.destinationPath (".gitignore"));
 				break;
-			
+
 			case "ES6/JavaScript":
 				this.fs.copyTpl (
 					this.templatePath ("es6/**/*"),
 					this.destinationRoot (),
-					templateContext
-				)
-				this.fs.copyTpl (
-					this.templatePath ("es6/.*"),
-					this.destinationRoot (),
-					templateContext
-				)
+					templateContext,
+					undefined,
+					{
+						globOptions: {
+							dot: true,
+							ignore: ["**/dot_gitignore"]
+						}
+					}
+				);
+				this.fs.copy (this.templatePath ("es6/dot_gitignore"), this.destinationPath (".gitignore"));
 				break;
-			
+
 			case "Haxe":
 				this.fs.copyTpl (
 					this.templatePath ("haxe/**/*"),
 					this.destinationRoot (),
-					templateContext
-				)
-				this.fs.copyTpl (
-					this.templatePath ("haxe/.*"),
-					this.destinationRoot (),
-					templateContext
-				)
+					templateContext,
+					undefined,
+					{
+						globOptions: {
+							dot: true,
+							ignore: ["**/dot_gitignore"]
+						}
+					}
+				);
+				this.fs.copy (this.templatePath ("haxe/dot_gitignore"), this.destinationPath (".gitignore"));
 				break;
-			
+
 			case "TypeScript":
 				this.fs.copyTpl (
 					this.templatePath ("typescript/**/*"),
 					this.destinationRoot (),
-					templateContext
-				)
-				this.fs.copyTpl (
-					this.templatePath ("typescript/.*"),
-					this.destinationRoot (),
-					templateContext
-				)
+					templateContext,
+					undefined,
+					{
+						globOptions: {
+							dot: true,
+							ignore: ["**/dot_gitignore"]
+						}
+					}
+				);
+				this.fs.copy (this.templatePath ("typescript/dot_gitignore"), this.destinationPath (".gitignore"));
 				break;
-			
+
+			case "AS3/Royale":
+				this.fs.copyTpl (
+					this.templatePath ("as3/**/*"),
+					this.destinationRoot (),
+					templateContext,
+					undefined,
+					{
+						globOptions: {
+							dot: true,
+							ignore: ["**/dot_gitignore"]
+						}
+					}
+				);
+				this.fs.copy (this.templatePath ("as3/dot_gitignore"), this.destinationPath (".gitignore"));
+				break;
+
+			default:
+				throw new Error ("Unknown language: " + this.props.language);
+
 		}
-		
+
 	}
-	
-	install () {
-		
-		//this.installDependencies ();
+
+	install() {
+
 		this.npmInstall ();
-		
+
 	}
-	
+
 };
