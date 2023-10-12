@@ -26,7 +26,7 @@ yo openfl
 
 ## License
 
-© [Joshua Granick and OpenFL contributors](https://github.com/openfl/generator-openfl)
+MIT © [Joshua Granick and OpenFL contributors](https://github.com/openfl/generator-openfl)
 
 
 [npm-image]: https://badge.fury.io/js/generator-openfl.svg
