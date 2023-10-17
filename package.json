@@ -1,6 +1,6 @@
 {
   "name": "generator-openfl",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Generator for OpenFL ES5, ES6, TypeScript, AS3/Royale, or Haxe NPM-based projects",
   "license": "MIT",
   "homepage": "https://openfl.org",
